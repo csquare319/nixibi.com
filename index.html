@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>逆襲幣 NIXI | nixibi.com</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #121829;
+      --accent: #ffd54a;
+      --text: #e7eaf3;
+      --muted: #99a3c0;
+      --btn: #1f2a44;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 80% -10%, #1a2440 0%, #0b0f19 60%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      padding: 28px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .brand-badge {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, #2e3c6a, #1f2a44);
+      display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .brand-badge span { font-weight: 800; color: var(--accent); }
+    .brand h1 { font-size: 18px; margin: 0; letter-spacing: .05em; }
+    .nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-size: 14px; }
+    .nav a:hover { color: var(--text); }
+    .hero {
+      max-width: 1100px; margin: 0 auto; padding: 40px 20px 20px;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px;
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,213,74,.08), transparent 40%), var(--card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 20px; padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      animation: floatIn .7s ease both;
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(10px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    h2 { margin: 0 0 12px; font-size: 28px; letter-spacing: .02em; }
+    p.lead { color: var(--muted); margin: 0 0 18px; }
+    .cta {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;
+    }
+    .btn {
+      appearance: none; border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, #26355f, #1a2546);
+      color: #fff; padding: 12px 16px; border-radius: 12px;
+      text-decoration: none; font-weight: 600; font-size: 14px;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(0,0,0,.45); }
+    .btn.primary {
+      background: linear-gradient(180deg, #ffd54a, #f0b400);
+      color: #111; border: none; box-shadow: 0 10px 24px rgba(240,180,0,.35);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.06); color: var(--muted);
+      border: 1px solid rgba(255,255,255,.08); padding: 6px 10px;
+      border-radius: 999px; font-size: 12px;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      max-width: 1100px; margin: 10px auto 40px; padding: 0 20px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px; padding: 22px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .list { color: var(--muted); margin: 10px 0 0; padding-left: 18px; }
+    .list li { margin: 6px 0; }
+    footer {
+      max-width: 1100px; margin: 0 auto; padding: 24px 20px 40px;
+      color: var(--muted); font-size: 13px;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
+      border-top: 1px dashed rgba(255,255,255,.08);
+    }
+    .links a { color: var(--muted); margin-right: 14px; text-decoration: none; }
+    .links a:hover { color: var(--text); }
+    .tip {
+      margin-top: 8px; font-size: 12px; color: var(--muted);
+    }
+    .contract-box {
+      margin-top: 10px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: var(--text);
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <div class="brand-badge"><span>逆</span></div>
+      <h1>逆襲幣 NIXI</h1>
+    </a>
+    <nav class="nav">
+      <a href="#about">關於</a>
+      <a href="#buy">購買</a>
+      <a href="#community">社群</a>
+      <a href="#links">連結</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <span class="pill">Wojak 中文迷因社群入口</span>
+      <h2>打工人也能逆襲：逆襲幣 × $WOJAK</h2>
+      <p class="lead">
+        逆襲幣是 Wojak 精神的中文門戶：做給草根、也做給相信改變的人。<br/>
+        完全社群驅動、無內部砸盤、長期鎖池 —— 我們的信仰是時間。
+      </p>
+      <div class="cta">
+        <a class="btn primary" id="buy" href="https://app.uniswap.org/swap?outputCurrency=0x5026f006b85729a8b14553fae6af249ad16c9aab" target="_blank" rel="noopener">在 Uniswap 買 $WOJAK</a>
+        <a class="btn" href="https://wojak.finance" target="_blank" rel="noopener">官方網站 wojak.finance</a>
+        <a class="btn" href="https://x.com/wojakcoineth" target="_blank" rel="noopener">官方 X：@wojakcoineth</a>
+      </div>
+      <div class="contract-box">
+        以太坊合約地址（ETH）：<br/>
+        <strong>0x5026F006B85729a8b14553FAE6af249aD16c9aaB</strong>
+      </div>
+      <p class="tip">* 提醒：交易前請務必再次核對合約地址，避免假幣釣魚。</p>
+    </div>
+
+    <div class="hero-card">
+      <h2>關於「逆襲幣」</h2>
+      <p class="lead">
+        我們把 Wojak 的精神用中文說清楚：<br/>
+        <strong>給普通人的加密門票，給不服輸的人一個機會。</strong>
+      </p>
+      <ul class="list">
+        <li>全球迷因文化共鳴：Wojak = 我們每個人</li>
+        <li>社群共建：內容、梗圖、推廣，由大家一起決定</li>
+        <li>長期主義：不是一時拉盤，而是長期耕耘與累積</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid" id="community">
+    <div class="card">
+      <h3>加入社群</h3>
+      <ul class="list">
+        <li>Discord（Wojak Time）：<a href="https://discord.gg/JpDRc4Jt" target="_blank" rel="noopener">https://discord.gg/JpDRc4Jt</a></li>
+        <li>Telegram（Wojak Time）：<a href="https://t.me/wojaktime" target="_blank" rel="noopener">@wojaktime</a></li>
+        <li>官方 X（Twitter）：<a href="https://x.com/wojakcoineth" target="_blank" rel="noopener">@wojakcoineth</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="links">
+      <h3>有用連結</h3>
+      <ul class="list">
+        <li>Uniswap 買入：<a href="https://app.uniswap.org/swap?outputCurrency=0x5026f006b85729a8b14553fae6af249ad16c9aab" target="_blank" rel="noopener">立即前往</a></li>
+        <li>CoinGecko（查詢 $WOJAK）：<a href="https://www.coingecko.com/en/coins/wojak" target="_blank" rel="noopener">coingecko.com</a></li>
+        <li>官方網站：<a href="https://wojak.finance" target="_blank" rel="noopener">wojak.finance</a></li>
+        <li>Wojak Time 英文入口：<a href="https://wojaktime.com" target="_blank" rel="noopener">wojaktime.com</a></li>
+      </ul>
+      <p class="tip">* 其他資訊（審計、鎖池、跨鏈等）請以官方公告為準，避免假冒連結。</p>
+    </div>
+
+    <div class="card" id="about">
+      <h3>安全提示</h3>
+      <ul class="list">
+        <li>務必從官方頁面進入交易連結，避免搜尋引擎廣告釣魚。</li>
+        <li>核對合約地址，確認與官方一致。</li>
+        <li>不要簽署不必要的授權交易（approve）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div>© <span id="year"></span> nixibi.com | 逆襲幣社群入口</div>
+    <div class="links">
+      <a href="https://x.com/wojakcoineth" target="_blank" rel="noopener">X</a>
+      <a href="https://discord.gg/JpDRc4Jt" target="_blank" rel="noopener">Discord</a>
+      <a href="https://t.me/wojaktime" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
